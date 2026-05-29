@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f0f0f;
+  color: #ececec;
+  font-family: "Syne", Arial, sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+button {
+  background-color: #ffffff;
+  color: #0f0f0f;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Syne", Arial, sans-serif;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d4d4d4;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

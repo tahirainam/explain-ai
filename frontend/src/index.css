@@ -22,13 +22,36 @@ button {
   font-weight: bold;
   font-family: "Syne", Arial, sans-serif;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 button:hover {
   background-color: #d4d4d4;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0px);
 }
 
 button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
+  transform: none;
+}
+
+select {
+  transition: border-color 0.2s ease;
+}
+
+select:focus {
+  border-color: #555555 !important;
+}
+
+textarea {
+  transition: border-color 0.2s ease;
+}
+
+textarea:focus {
+  border-color: #555555 !important;
 }

@@ -27,12 +27,24 @@ function App() {
       });
 
       const data = await response.json();
-      setExplanation(data.explanation);
+      const fullText = data.explanation;
+
+      setLoading(false);
+
+      // Typing effect — reveal one character at a time
+      let index = 0;
+      const interval = setInterval(() => {
+        index++;
+        setExplanation(fullText.slice(0, index));
+        if (index >= fullText.length) {
+          clearInterval(interval);
+        }
+      }, 8);
+
     } catch (err) {
       setError("Something went wrong. Please try again.");
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
@@ -50,9 +62,10 @@ function App() {
           ⟨/⟩ ExplainAI
         </h1>
         <p style={{
-          color: "#666666",
+          color: "#555555",
           marginTop: "10px",
           fontSize: "0.95rem",
+          letterSpacing: "0.3px",
         }}>
           Paste code, pick a mode, get a clear explanation.
         </p>
@@ -62,9 +75,10 @@ function App() {
       <div style={{
         background: "#1a1a1a",
         borderRadius: "12px",
-        padding: "24px",
+        padding: "28px",
         marginBottom: "16px",
         border: "1px solid #2a2a2a",
+        transition: "border-color 0.2s ease",
       }}>
         <CodeInput
           code={code}
@@ -80,8 +94,10 @@ function App() {
       <div style={{
         background: "#1a1a1a",
         borderRadius: "12px",
-        padding: "24px",
+        padding: "28px",
         border: "1px solid #2a2a2a",
+        marginBottom: "40px",
+        transition: "border-color 0.2s ease",
       }}>
         <OutputBox
           explanation={explanation}

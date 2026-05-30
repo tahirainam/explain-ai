@@ -3,7 +3,13 @@ import React from "react";
 function CodeInput({ code, setCode, mode, setMode, onSubmit, loading }) {
   return (
     <div>
-      <p style={{ color: "#888888", fontSize: "0.8rem", marginBottom: "8px", textTransform: "uppercase", letterSpacing: "1px" }}>
+      <p style={{
+        color: "#888888",
+        fontSize: "0.78rem",
+        marginBottom: "8px",
+        textTransform: "uppercase",
+        letterSpacing: "1px",
+      }}>
         Your Code
       </p>
       <textarea
@@ -26,7 +32,13 @@ function CodeInput({ code, setCode, mode, setMode, onSubmit, loading }) {
         }}
       />
 
-      <p style={{ color: "#888888", fontSize: "0.8rem", margin: "16px 0 8px", textTransform: "uppercase", letterSpacing: "1px" }}>
+      <p style={{
+        color: "#888888",
+        fontSize: "0.78rem",
+        margin: "20px 0 8px",
+        textTransform: "uppercase",
+        letterSpacing: "1px",
+      }}>
         Mode
       </p>
       <select
@@ -55,7 +67,7 @@ function CodeInput({ code, setCode, mode, setMode, onSubmit, loading }) {
       <button
         onClick={onSubmit}
         disabled={loading}
-        style={{ width: "100%", padding: "13px" }}
+        style={{ width: "100%", padding: "13px", fontSize: "15px" }}
       >
         {loading ? "Analyzing..." : "Explain Code"}
       </button>
